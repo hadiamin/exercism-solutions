@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TwoferTest" tests="3" skipped="2" failures="0" errors="0" timestamp="2023-04-13T12:27:38" hostname="GUDAHs-MBP" time="0.055">
+<testsuite name="TwoferTest" tests="3" skipped="2" failures="0" errors="0" timestamp="2023-04-13T12:33:32" hostname="GUDAHs-MBP" time="0.059">
   <properties/>
-  <testcase name="noNameGiven" classname="TwoferTest" time="0.054"/>
+  <testcase name="noNameGiven" classname="TwoferTest" time="0.058"/>
   <testcase name="aNameGiven" classname="TwoferTest" time="0.0">
     <skipped/>
   </testcase>
