@@ -14,15 +14,20 @@ class BirdWatcher {
     }
 
     public int getToday() {
-        return birdsPerDay[6];
+        int todayIndex = birdsPerDay.length - 1;
+        return birdsPerDay[todayIndex];
     }
 
     public void incrementTodaysCount() {
-        birdsPerDay[6] = getToday() + 1;
+        int todayIndex = birdsPerDay.length - 1;
+        birdsPerDay[todayIndex] = getToday() + 1;
     }
 
     public boolean hasDayWithoutBirds() {
-        return Arrays.stream(birdsPerDay).anyMatch(count -> count == 0);
+        for (int count : birdsPerDay) {
+            if (count == 0) return true;
+        }
+        return false;
     }
 
     public int getCountForFirstDays(int numberOfDays) {
@@ -37,6 +42,10 @@ class BirdWatcher {
     }
 
     public int getBusyDays() {
-        return (int) Arrays.stream(birdsPerDay).filter(count -> count > 4).count();
+        int count = 0;
+        for (int bird : birdsPerDay) {
+            count = bird > 4 ? count + 1 : count;
+        }
+        return count;
     }
 }
