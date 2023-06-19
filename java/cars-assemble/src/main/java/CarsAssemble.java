@@ -1,5 +1,5 @@
 public class CarsAssemble {
-     int numberOfCars = 221;
+    int numberOfCars = 221;
     public double productionRatePerHour(int speed) {
         if (speed >= 1 && speed <= 4) {
             return numberOfCars * speed;
