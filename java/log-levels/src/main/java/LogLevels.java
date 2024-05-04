@@ -1,14 +1,21 @@
+import static java.lang.String.format;
+
 public class LogLevels {
     
     public static String message(String logLine) {
-        return logLine.substring(8);
+
+        String[] logLineArray = logLine.split(":");
+        return logLineArray[1].strip();
     }
 
     public static String logLevel(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.logLevel() method");
+        return logLine.split(":")[0]
+                .replace("[", "")
+                .replace("]", "")
+                .toLowerCase();
     }
 
     public static String reformat(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.reformat() method");
+        return format("%s (%s)", message(logLine), logLevel(logLine));
     }
 }
